@@ -1,0 +1,169 @@
+---
+title: "SMU_DDS_6306-403_HW#4"
+author: "Jack K. Rasmus-Vorrath"
+date: "June 4, 2017"
+output: html_document
+---
+
+# Question 1a
+
+### Log of a Positive Number
+```{r Question 1a}
+log(5)
+
+```
+
+# Question 1b
+
+### The default base of log() is e
+
+#### Different bases can be used with different functions or different inputs to the 'base' argument
+```{r Question 1b}
+log(5, base = exp(1))
+
+log(5, base = 2)
+
+log2(5)
+
+```
+
+# Question 1c
+
+### Logs of negative numbers do not exist
+```{r Question 1c}
+log(-1)
+```
+
+# Question 1d
+
+### Square roots can be taken with the sqrt() function
+```{r Question 1d}
+sqrt(4)
+```
+
+# Question 2a
+
+### Vector of 15 standard normal random values, whose mean and standard deviation are calculated after generation
+```{r Question 2a}
+x <- rnorm(15)
+
+x
+
+mean(x)
+
+sd(x)
+```
+
+# Question 2b
+
+### Vector of 15 standard normal random values of mean 10 and standard deviation 2, whose mean and standard deviation are again calculated after generation
+```{r Question 2b}
+y <- rnorm(15, 10, 2)
+
+y
+
+mean(y)
+
+sd(y)
+```
+
+# Question 2c
+
+### NB (above): Measures calculated after random number generation will not precisely match argument inputs, and depend on the particular randomization seed
+
+
+# Question 3a
+
+### Weights of 6 individuals in KG
+```{r Question 3a}
+weights <- c(60, 72, 57, 90, 95, 72)
+```
+
+# Question 3b
+
+### Heights of 6 individuals in M
+```{r Question 3b}
+heights <- c(1.80, 1.85, 1.72, 1.90, 1.74, 1.91)
+```
+
+# Question 3c
+
+### Weight and Height vector output
+```{r Question 3c}
+weights
+
+heights
+```
+
+# Question 3d
+
+### Simple scatterplot of Weight v. Height, indicating a general positive correlation, with one high leverage point at (95, 1.74)
+```{r Question 3d}
+plot(weights, heights, main = "Scatterplot of Weight v. Height: 6 Individuals", xlab = "Weight", ylab = "Height", pch = 19)
+```
+
+# Question 3e
+
+### BMI for 6 individuals: Weight / Height^2
+```{r Question 3e}
+BMI <- weights/(heights)^2
+
+BMI
+```
+
+# Question 3f
+
+### Mean Weight calculation
+```{r Question 3f}
+mean(weights)
+```
+
+# Question 3g
+
+### Calculated deviation from the mean
+```{r Question 3g}
+meanDifference <- weights - mean(weights)
+
+meanDifference
+```
+
+# Question 3h
+
+### Sum of deviation from the mean (non-squared!)
+```{r Question 3h}
+sum(meanDifference)
+```
+
+# Question 4
+
+### Jack's Data Science profile
+```{r Question 4}
+Jack <- data.frame(Skills = c("Computer Programming", "Math", "Statistics", "Machine Learning", "Domain Expertise", "Communication & Presentation Skills", "Data Visualization"), Ranking = c(3, 5, 4, 3, 5, 5, 2))
+
+library(ggplot2)
+
+levels(Jack$Skills) <- gsub(" ", "\n", levels(Jack$Skills))
+
+ggplot(Jack, aes(Skills, Ranking)) + geom_col()
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
